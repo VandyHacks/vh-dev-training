@@ -8,8 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -42,14 +42,15 @@ var node_fetch_1 = require("node-fetch");
 // 1st, the function that is called in must have the keyword "async" before the parameters
 // 2nd when you call it, you must preface it with "await"
 // like in the below example
+
 var getDataFromAPI = function (url) {
     return new Promise(function (res, rej) {
         node_fetch_1["default"](url)
             .then(function (data) { return data.json(); })
             .then(function (json) {
-            // the json variable here is just the stuff you see in the browser
-            res(json);
-        })["catch"](function (err) { return rej(err); });
+                // the json variable here is just the stuff you see in the browser
+                res(json);
+            })["catch"](function (err) { return rej(err); });
     });
 };
 var objectively = function () {
@@ -61,35 +62,37 @@ var objectively = function () {
     // const whatAmI = { 0: 'A', 1: 'B', 2: 'C', 3: 'D' };
     // @response 2: This object can have values other than numbers for its keys while an array can only be indexed by numbers
     // @response 3i: This is an object that contains other objects, with each object representing a person on the hackerspotted leaderboard
-    var q3 = function (n) { return __awaiter(_this, void 0, void 0, function () {
-        var res, _a, _b, _c, _d, person, nTmp;
-        return __generator(this, function (_e) {
-            switch (_e.label) {
-                case 0:
-                    _b = (_a = JSON).parse;
-                    _d = (_c = JSON).stringify;
-                    return [4 /*yield*/, getDataFromAPI('https://spot.benc.me/?time=1549939921')];
-                case 1:
-                    res = _b.apply(_a, [_d.apply(_c, [_e.sent()])]);
-                    res.sort(function (a, b) {
-                        if (a.unique > b.unique)
-                            return -1;
-                        if (a.unique < b.unique)
-                            return 1;
-                        return 0;
-                    });
-                    person = res[n - 1];
-                    nTmp = n;
-                    while (res[nTmp].unique === person.unique) {
-                        if (res[nTmp].score > person.score)
-                            person = res[nTmp];
-                        nTmp += 1;
-                    }
-                    console.log(person);
-                    return [2 /*return*/];
-            }
+    var q3 = function (n) {
+        return __awaiter(_this, void 0, void 0, function () {
+            var res, _a, _b, _c, _d, person, nTmp;
+            return __generator(this, function (_e) {
+                switch (_e.label) {
+                    case 0:
+                        _b = (_a = JSON).parse;
+                        _d = (_c = JSON).stringify;
+                        return [4 /*yield*/, getDataFromAPI('https://spot.benc.me/?time=1549939921')];
+                    case 1:
+                        res = _b.apply(_a, [_d.apply(_c, [_e.sent()])]);
+                        res.sort(function (a, b) {
+                            if (a.unique > b.unique)
+                                return -1;
+                            if (a.unique < b.unique)
+                                return 1;
+                            return 0;
+                        });
+                        person = res[n - 1];
+                        nTmp = n;
+                        while (res[nTmp].unique === person.unique) {
+                            if (res[nTmp].score > person.score)
+                                person = res[nTmp];
+                            nTmp += 1;
+                        }
+                        console.log(person);
+                        return [2 /*return*/];
+                }
+            });
         });
-    }); };
+    };
     q3(3);
 };
 objectively();
@@ -114,39 +117,41 @@ var awry = function () {
     var q3 = function (arr) {
         return arr.reduce(function (acc, cur) { return acc + cur; });
     };
-    var q4 = function (n) { return __awaiter(_this, void 0, void 0, function () {
-        var res, _a, _b, _c, _d, person, nTmp;
-        return __generator(this, function (_e) {
-            switch (_e.label) {
-                case 0:
-                    _b = (_a = JSON).parse;
-                    _d = (_c = JSON).stringify;
-                    return [4 /*yield*/, getDataFromAPI('https://spot.benc.me/?time=1549939921')];
-                case 1:
-                    res = _b.apply(_a, [_d.apply(_c, [_e.sent()])]);
-                    res
-                        .filter(function (person) {
-                        return person.spotted >= 3 || person.spotted === 0;
-                    })
-                        .sort(function (a, b) {
-                        if (a.unique > b.unique)
-                            return -1;
-                        if (a.unique < b.unique)
-                            return 1;
-                        return 0;
-                    });
-                    person = res[n - 1];
-                    nTmp = n;
-                    while (res[nTmp].unique === person.unique) {
-                        if (res[nTmp].score > person.score)
-                            person = res[nTmp];
-                        nTmp += 1;
-                    }
-                    console.log(person);
-                    return [2 /*return*/];
-            }
+    var q4 = function (n) {
+        return __awaiter(_this, void 0, void 0, function () {
+            var res, _a, _b, _c, _d, person, nTmp;
+            return __generator(this, function (_e) {
+                switch (_e.label) {
+                    case 0:
+                        _b = (_a = JSON).parse;
+                        _d = (_c = JSON).stringify;
+                        return [4 /*yield*/, getDataFromAPI('https://spot.benc.me/?time=1549939921')];
+                    case 1:
+                        res = _b.apply(_a, [_d.apply(_c, [_e.sent()])]);
+                        res
+                            .filter(function (person) {
+                                return person.spotted >= 3 || person.spotted === 0;
+                            })
+                            .sort(function (a, b) {
+                                if (a.unique > b.unique)
+                                    return -1;
+                                if (a.unique < b.unique)
+                                    return 1;
+                                return 0;
+                            });
+                        person = res[n - 1];
+                        nTmp = n;
+                        while (res[nTmp].unique === person.unique) {
+                            if (res[nTmp].score > person.score)
+                                person = res[nTmp];
+                            nTmp += 1;
+                        }
+                        console.log(person);
+                        return [2 /*return*/];
+                }
+            });
         });
-    }); };
+    };
     console.log(q3(q1()));
     console.log(q3(q2()));
     q4(3);
