@@ -3,7 +3,6 @@ import { Response } from 'request'; // I hate myself everytime I type this
 import fetch from 'node-fetch';
 import { lstat } from 'fs';
 const sha1 = require('sha1');
-
 require('dotenv').config();
 interface WeatherUpdate {
 	location: string; // i.e. "Vanderbilt University"
@@ -124,7 +123,7 @@ export const asyncAwait = async (location: string, slackUsername: string): Promi
 	let currWeather: DarkSky = await (await fetch(makeDarkSkyUrl(process.env.DARK_SKY_TOKEN, weatherInfo.lat, weatherInfo.lon))).json();
 	weatherInfo.weather = `It's ${currWeather.currently.summary} and it's ${currWeather.currently.temperature} degrees.`
 
-	console.log(`Data sha1: ${sha1(JSON.stringify(weatherInfo))}`)
+	// console.log(`Data sha1: ${sha1(JSON.stringify(weatherInfo))}`)
 	return (await fetch(makeSlackUrl(weatherInfo, slackUsername))).json();
 };
 
@@ -134,6 +133,6 @@ export const asyncAwait = async (location: string, slackUsername: string): Promi
 // }); // feel free to change the place. It'll be more interesting if everyone's not doing the same place.
 // promises('Vanderbilt University', 'C9S0DF3BR').then(data => console.log(data));
 
-(async () => {
-	console.log(`Slack sha1: ${(await asyncAwait('Vanderbilt University', 'C9S0DF3BR')).sha1}`);
-})();
+// (async () => {
+// 	console.log(`Slack sha1: ${(await asyncAwait('Vanderbilt University', 'C9S0DF3BR')).sha1}`);
+// })();
