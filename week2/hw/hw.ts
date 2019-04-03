@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 import { lstat } from 'fs';
 const sha1 = require('sha1');
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 interface WeatherUpdate {
 	location: string; // i.e. "Vanderbilt University"
 	weather: string; // the format specified in the README
