@@ -39,7 +39,8 @@ exports.__esModule = true;
 var request = require('request');
 var node_fetch_1 = require("node-fetch");
 var sha1 = require('sha1');
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production')
+    require('dotenv').config();
 var makeOpenStreetMapUrl = function (location, email) { return "https://nominatim.openstreetmap.org/?format=json&q=" + location + "&format=json&limit=3&email=" + email; };
 var makeDarkSkyUrl = function (token, lat, lon) { return "https://api.darksky.net/forecast/" + token + "/" + lat + "," + lon; };
 var makeSlackUrl = function (data, slackUsername) { return "https://send-to-slack-nfp4cc31q.now.sh/?user=" + slackUsername + "&data=" + JSON.stringify(data); };
@@ -124,9 +125,10 @@ exports.asyncAwait = function (location, slackUsername) { return __awaiter(_this
             case 4:
                 currWeather = _a.sent();
                 weatherInfo.weather = "It's " + currWeather.currently.summary + " and it's " + currWeather.currently.temperature + " degrees.";
-                console.log("Data sha1: " + sha1(JSON.stringify(weatherInfo)));
                 return [4 /*yield*/, node_fetch_1["default"](makeSlackUrl(weatherInfo, slackUsername))];
-            case 5: return [2 /*return*/, (_a.sent()).json()];
+            case 5: 
+            // console.log(`Data sha1: ${sha1(JSON.stringify(weatherInfo))}`)
+            return [2 /*return*/, (_a.sent()).json()];
         }
     });
 }); };
@@ -135,17 +137,6 @@ exports.asyncAwait = function (location, slackUsername) { return __awaiter(_this
 // 	console.log(body);
 // }); // feel free to change the place. It'll be more interesting if everyone's not doing the same place.
 // promises('Vanderbilt University', 'C9S0DF3BR').then(data => console.log(data));
-(function () { return __awaiter(_this, void 0, void 0, function () {
-    var _a, _b, _c;
-    return __generator(this, function (_d) {
-        switch (_d.label) {
-            case 0:
-                _b = (_a = console).log;
-                _c = "Slack sha1: ";
-                return [4 /*yield*/, exports.asyncAwait('Vanderbilt University', 'C9S0DF3BR')];
-            case 1:
-                _b.apply(_a, [_c + (_d.sent()).sha1]);
-                return [2 /*return*/];
-        }
-    });
-}); })();
+// (async () => {
+// 	console.log(`Slack sha1: ${(await asyncAwait('Vanderbilt University', 'C9S0DF3BR')).sha1}`);
+// })();
