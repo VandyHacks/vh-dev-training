@@ -3,7 +3,7 @@ import { Response } from 'request'; // I hate myself everytime I type this
 import fetch from 'node-fetch';
 import { lstat } from 'fs';
 const sha1 = require('sha1');
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 interface WeatherUpdate {
 	location: string; // i.e. "Vanderbilt University"
 	weather: string; // the format specified in the README
