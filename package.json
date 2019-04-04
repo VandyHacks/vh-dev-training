@@ -4,6 +4,7 @@
 	"description": "Training for VH dev members",
 	"main": "index.js",
 	"scripts": {
+		"postinstall": "npm i ts-node",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"week1": "if [ -f week1/meeting/fun.js ]; then node week1/meeting/fun.js; else ts-node week1/meeting/fun.ts; fi",
 		"week2": "ts-node week2/meeting/class.ts",
