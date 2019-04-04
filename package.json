@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"week1": "if [ -f week1/meeting/fun.js ]; then node week1/meeting/fun.js; else ts-node week1/meeting/fun.ts; fi",
 		"week2": "ts-node week2/meeting/class.ts",
-		"hw": "tsc week2/hw/server.ts && node week2/hw/server.js",
+		"hw": "ts-node week2/hw/server.ts",
 		"hw-dev": "ts-node week2/hw/hw.ts",
 		"lint": "eslint -c .eslintrc.js --ext .ts week1/ week2/",
 		"lint:fix": "eslint -c .eslintrc.js --ext .ts week1/ week2/ --fix"

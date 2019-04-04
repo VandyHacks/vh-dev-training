@@ -1,8 +1,7 @@
-const request = require('request');
-import { Response } from 'request'; // I hate myself everytime I type this
+import request, { Response } from 'request'; // I hate myself everytime I type this
 import fetch from 'node-fetch';
 import { lstat } from 'fs';
-const sha1 = require('sha1');
+import sha1 from 'sha1';
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 interface WeatherUpdate {
@@ -129,11 +128,11 @@ export const asyncAwait = async (location: string, slackUsername: string): Promi
 };
 
 // all the console.logs should log what the send-to-slack API returns
-// callbacks('Vanderbilt University', 'C9S0DF3BR', body => {
-// 	console.log(body);
-// }); // feel free to change the place. It'll be more interesting if everyone's not doing the same place.
-// promises('Vanderbilt University', 'C9S0DF3BR').then(data => console.log(data));
+callbacks('Vanderbilt University', 'C9S0DF3BR', body => {
+	console.log(body);
+}); // feel free to change the place. It'll be more interesting if everyone's not doing the same place.
+promises('Vanderbilt University', 'C9S0DF3BR').then(data => console.log(data));
 
-// (async () => {
-// 	console.log(`Slack sha1: ${(await asyncAwait('Vanderbilt University', 'C9S0DF3BR')).sha1}`);
-// })();
+(async () => {
+	console.log(`Slack sha1: ${(await asyncAwait('Vanderbilt University', 'C9S0DF3BR')).sha1}`);
+})();

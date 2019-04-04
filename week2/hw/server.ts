@@ -1,5 +1,5 @@
-// import Koa from 'koa';
-const Koa = require('koa');
+import Koa from 'koa';
+// const Koa = require('koa');
 import { asyncAwait } from './hw';
 
 const app = new Koa();
