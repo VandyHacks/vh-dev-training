@@ -21,16 +21,12 @@
 	],
 	"license": "SEE LICENSE IN LICENSE.md",
 	"dependencies": {
-<<<<<<< HEAD
-		"@types/sha1": "^1.1.1",
-=======
 		"@types/koa-bodyparser": "^4.2.2",
 		"@types/koa-passport": "^4.0.2",
 		"@types/koa-session": "^5.10.0",
 		"@types/koa-static": "^4.0.1",
 		"@types/passport-google-oauth": "^1.0.39",
 		"dotenv": "^7.0.0",
->>>>>>> 48bcb2c39f0e163cc0d0f0a88345e6a0445d2ce0
 		"koa": "^2.7.0",
 		"koa-bodyparser": "^4.2.1",
 		"koa-passport": "^4.1.1",
@@ -55,14 +51,7 @@
 		"@types/react": "^16.8.12",
 		"@types/react-dom": "^16.8.3",
 		"@types/request": "^2.48.1",
-<<<<<<< HEAD
-		"@typescript-eslint/eslint-plugin": "^1.5.0"
-	},
-	"devDependencies": {
-		"dotenv": "^7.0.0",
-=======
 		"@typescript-eslint/eslint-plugin": "^1.5.0",
->>>>>>> 48bcb2c39f0e163cc0d0f0a88345e6a0445d2ce0
 		"eslint": "^5.15.3",
 		"eslint-config-airbnb": "^17.1.0",
 		"eslint-config-prettier": "^4.1.0",
