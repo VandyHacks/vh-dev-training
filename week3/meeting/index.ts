@@ -34,7 +34,7 @@ router.get('/weather', async ctx => {
 	)).json();
 
 	const latitude: any = geoDataJson[0].lat;
-	const longitude: any = geoDataJson[1].lon;
+	const longitude: any = geoDataJson[0].lon;
 
 	// Great! Now we can get some weather data.
 	const weatherDataJson: any = await (await fetch(

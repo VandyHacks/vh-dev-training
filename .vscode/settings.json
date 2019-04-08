@@ -3,5 +3,6 @@
 	"eslint.run": "onSave",
 	"eslint.packageManager": "npm",
 	"npm.enableScriptExplorer": true,
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"dimmer.enabled": false
 }
