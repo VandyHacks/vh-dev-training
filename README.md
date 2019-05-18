@@ -47,4 +47,4 @@ I have tried to replicate the linting and Typescript configs for Vaken as closel
 
 Do this for your first homework. We'll give instructions associated with each homework for how to deploy. I strongly recommend not hitting the button until _after_ your code works. After hitting the button, you'll have to create an account and then Heroku will walk you through it.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) [![Greenkeeper badge](https://badges.greenkeeper.io/VandyHacks/vh-dev-training.svg)](https://greenkeeper.io/)
